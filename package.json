@@ -10,7 +10,7 @@
     "test": "node index.js"
   },
   "description": "This is a test package for testing GitHub's upcoming OICD feature",
-  "repository": "github:gr2m/github-project",
+  "repository": "github:gr2m/npm-oicd-test",
   "author": "Gregor Martynus",
   "license": "ISC",
   "release": {
