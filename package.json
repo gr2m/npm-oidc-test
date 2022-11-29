@@ -1,5 +1,5 @@
 {
-  "name": "@gr2m/oicd-test",
+  "name": "@gr2m/oidc-test",
   "publishConfig": {
     "access": "public"
   },
@@ -9,8 +9,8 @@
   "scripts": {
     "test": "node index.js"
   },
-  "description": "This is a test package for testing GitHub's upcoming OICD feature",
-  "repository": "github:gr2m/npm-oicd-test",
+  "description": "This is a test package for testing GitHub's upcoming OIDC feature",
+  "repository": "github:gr2m/npm-oidc-test",
   "author": "Gregor Martynus",
   "license": "ISC",
   "release": {
