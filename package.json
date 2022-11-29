@@ -1,0 +1,27 @@
+{
+  "name": "@gr2m/oicd-test",
+  "publishConfig": {
+    "access": "public"
+  },
+  "type": "module",
+  "exports": "./index.js",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "description": "This is a test package for testing GitHub's upcoming OICD feature",
+  "repository": "github:gr2m/github-project",
+  "author": "Gregor Martynus",
+  "license": "ISC",
+  "release": {
+    "branches": [
+      "+([0-9]).x",
+      "main",
+      "next",
+      {
+        "name": "beta",
+        "prerelease": true
+      }
+    ]
+  }
+}
