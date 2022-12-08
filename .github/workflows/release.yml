@@ -16,8 +16,30 @@ jobs:
         with:
           node-version: lts/*
           cache: npm
+      # checkout unreleased npm version
+      - name: Clone npm
+        uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b # v3
+        with:
+          repository: npm/cli
+          ref: provenance
+          path: npm
+      # link unreleased npm version
+      - name: Build npm
+        run: |
+          cd npm
+          node . link
+          cd ..
+          npm version
+      # confirm that linking worked
+      - run: which npm
       - run: npm ci
       - run: npx semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      # create .npmrc file
+      - run: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      # publish
+      - run: npm publish --provenance
