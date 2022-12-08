@@ -27,7 +27,7 @@
       "@semantic-release/commit-analyzer",
       "@semantic-release/release-notes-generator",
       [
-        "@gr2m/semantic-release-plugin-npm-oidc",
+        "@semantic-release/npm",
         {
           "npmPublish": false
         }
